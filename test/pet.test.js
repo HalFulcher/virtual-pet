@@ -39,3 +39,25 @@ describe('growUp', () => {
   });
 
 });
+
+
+describe('walk', () => {
+  it('increases the fitness by 4, to a max of 10', () => {
+    const pet = new Pet('Fido');
+
+    pet.walk();
+
+    expect(pet.fitness).toEqual(10);
+});
+
+it('increases the fitness by 4, to a max of 10', () => {
+  const pet = new Pet('Fido');
+
+  pet.fitness = 4;
+  pet.walk();
+
+  expect(pet.fitness).toEqual(8);
+});
+
+
+});
