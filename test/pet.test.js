@@ -38,7 +38,16 @@ describe('growUp', () => {
 
   });
 
-});
+  it('throws an error if the pet is not alive', () => {
+    const pet = new Pet('Fido');
+  
+    pet.age = 31;
+  
+    expect(() => pet.growUp()).toThrow('Your pet is dead, sorry.');
+  });
+  });
+
+
 
 
 describe('walk', () => {
@@ -57,6 +66,14 @@ it('increases the fitness by 4, to a max of 10', () => {
   pet.walk();
 
   expect(pet.fitness).toEqual(8);
+});
+
+it('throws an error if the pet is not alive', () => {
+  const pet = new Pet('Fido');
+
+  pet.age = 31;
+
+  expect(() => pet.walk()).toThrow('Your pet is dead, sorry.');
 });
 });
 
@@ -77,7 +94,17 @@ it('increases the fitness by 4, to a max of 10', () => {
 
   expect(pet.hunger).toEqual(1);
 });
+
+
+it('throws an error if the pet is not alive', () => {
+  const pet = new Pet('Fido');
+
+  pet.age = 31;
+
+  expect(() => pet.feed()).toThrow('Your pet is dead, sorry.');
 });
+});
+
 
 describe('checkUp', () => {
   it('checks if hungry and unfit', () => {
@@ -153,3 +180,11 @@ it('checks if still alive', () => {
 
 });
 });
+
+
+
+
+ 
+
+
+
